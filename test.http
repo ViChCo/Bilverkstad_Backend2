@@ -1,0 +1,35 @@
+### 1. Skapa kund Anna
+POST http://localhost:8080/customers?name=Anna&phone=123456789
+
+### 2. Skapa kund Erik (får inga fordon, testar LEFT JOIN)
+POST http://localhost:8080/customers?name=Erik&phone=987654321
+
+### 3. Hämta kund-ID via namn
+GET http://localhost:8080/customer-id?name=Anna
+
+### 4. Skapa fordon: Volvo
+POST http://localhost:8080/vehicles?registrationNumber=ABC123&brand=Volvo&model=V60&productionYear=2022
+
+### 5. Skapa fordon: Saab
+POST http://localhost:8080/vehicles?registrationNumber=XYZ789&brand=Saab&model=9-3&productionYear=2008
+
+### 6. Koppla fordon 1 till kund 1
+POST http://localhost:8080/addvehicletocustomer?customerId=1&vehicleId=1
+
+### 7. Lista alla kunder med fordon
+GET http://localhost:8080/customers
+
+### 8. Lista alla fordon
+GET http://localhost:8080/vehicles
+
+### 9. Lista fordon med bilmärket Volvo
+GET http://localhost:8080/vehicles-by-brand?brand=Volvo
+
+### 10. Uppdatera bilmärke för fordon 1
+PUT http://localhost:8080/vehicles/1/brand?brand=Saab
+
+### 11. Lista registreringsnummer och bilmärke
+GET http://localhost:8080/vehicle-brand-info
+
+### 12. Kontrollera att märket ändrades
+GET http://localhost:8080/vehicles
